@@ -6,78 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Services UI</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- React -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- 
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif
+            font-family: Poppins;
         }
 
         body {
-            background: #000;
+            background: #0f0f17;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
-            padding: 12px;
+            align-items: center;
             color: #fff;
-            height: 100vh;
-
+            overflow-x: hidden;
         }
- @media(max-width:480px) {
+
         .app {
-           
             width: 360px;
-            background: #0e0e0e;
+            background: #0f0f17;
             padding: 20px;
-            border-radius: 28px;
-            box-shadow: 0 0 35px rgba(162, 94, 255, .35);
             display: flex;
             flex-direction: column;
-
-            height: 600px;
+            min-height: 100%;
         }
 
-        /* Top */
+        /* Top bar */
         .top-bar {
             display: flex;
             justify-content: space-between;
-            align-items: center
         }
 
         .welcome {
             color: #bdbdbd;
-            font-size: 15px
+            font-size: 15px;
         }
 
         .username {
             font-size: 22px;
             font-weight: 600;
-            color: #eecda3
-        }
-
-        .top-bar i {
-            margin-left: 14px;
-            cursor: pointer
+            color: #eecda3;
         }
 
         /* Offers */
         .section-title {
-            margin: 18px 0 8px
+            margin: 18px 0 8px;
         }
 
         .offer-card-container {
-            overflow: hidden
+            overflow: hidden;
         }
 
         .offer-slider {
@@ -88,16 +74,16 @@
         }
 
         .offer-slider:hover {
-            animation-play-state: paused
+            animation-play-state: paused;
         }
 
         @keyframes slide {
             0% {
-                transform: translateX(0)
+                transform: translateX(0);
             }
 
             100% {
-                transform: translateX(-50%)
+                transform: translateX(-50%);
             }
         }
 
@@ -114,19 +100,6 @@
             top: 10px;
             right: 10px;
             font-size: 26px;
-        }
-
-        .offer-card h1 {
-            font-size: 30px
-        }
-
-        .offer-card p {
-            font-size: 14px
-        }
-
-        .offer-card span {
-            font-size: 12px;
-            opacity: .8
         }
 
         /* Services */
@@ -146,55 +119,54 @@
         }
 
         .service-item:hover {
+            background: #222;
             transform: translateY(-4px);
-            background: #222
         }
 
         .service-item i {
             font-size: 24px;
-            margin-bottom: 6px
+            margin-bottom: 6px;
         }
 
         .service-item p {
-            font-size: 12px
+            font-size: 12px;
         }
 
         /* Colors */
         .purple i {
-            color: #c08aff
+            color: #c08aff;
         }
 
         .orange i {
-            color: #ff9a62
+            color: #ff9a62;
         }
 
         .blue i {
-            color: #4fa7ff
+            color: #4fa7ff;
         }
 
         .yellow i {
-            color: #ffd454
+            color: #ffd454;
         }
 
         /* WhatsApp */
-        .whatsapp-circle { position: fixed; left: 37%; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; text-decoration: none; background: linear-gradient(145deg, #2be86f, #1db954); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45); z-index: 1000; animation: float 3s ease-in-out infinite; }
-        @media (max-width: 600px) { .whatsapp-circle { left: 15%; top: 40%; } }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0)
-            }
-
-            50% {
-                transform: translateY(-6px)
-            }
+          .whatsapp-circle {
+            position: fixed;
+            right: 20px;
+            bottom: 110px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(145deg, #2be86f, #1db954);
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .45);
         }
-
         .whatsapp-circle i {
             font-size: 26px;
-            color: #fff
+            color: #fff;
         }
 
         /* Bottom Nav */
@@ -204,261 +176,22 @@
             padding: 14px 10px;
             border-radius: 26px;
             display: flex;
-            margin-top: 30px;
             justify-content: space-between;
         }
 
         .nav-item {
             text-align: center;
             flex: 1;
-            cursor: pointer
+            cursor: pointer;
         }
 
         .nav-item i {
-            font-size: 18px
+            font-size: 18px;
         }
 
         .nav-item p {
-            font-size: 11px
+            font-size: 11px;
         }
-        .mu{
-  text-decoration:none;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-
-       
-       
-        } -->
-<style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif
-        }
-
-        body {
-              background: #0f0f17;
-            display: flex;
-            justify-content: center;
-             height: 100vh;
-            padding: 12px;
-            color: #fff;
-           
-
-        }
-
-        .app {
-           
-            width: 360px;
-                background: #0f0f17;
-            padding: 20px;
-             margin: auto;
-            /* border-radius: 28px;
-            box-shadow: 0 0 35px rgba(162, 94, 255, .35); */
-            display: flex;
-            flex-direction: column;
-
-            height: 600px;
-        }
-    /* Top bar */
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .welcome {
-        color: #bdbdbd;
-        font-size: 15px;
-    }
-
-    .username {
-        font-size: 22px;
-        font-weight: 600;
-        color: #eecda3;
-    }
-
-    .top-bar i {
-        margin-left: 14px;
-        cursor: pointer;
-    }
-
-    /* Offers */
-    .section-title {
-        margin: 18px 0 8px;
-    }
-
-    .offer-card-container {
-        overflow: hidden;
-    }
-
-    .offer-slider {
-        display: flex;
-        gap: 12px;
-        width: max-content;
-        animation: slide 12s linear infinite;
-    }
-
-    .offer-slider:hover {
-        animation-play-state: paused;
-    }
-
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    .offer-card {
-        width: 220px;
-        background: linear-gradient(45deg, #883aff, #5146ff);
-        border-radius: 18px;
-        padding: 16px;
-        position: relative;
-    }
-
-    .offer-card i {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 26px;
-    }
-
-    .offer-card h1 {
-        font-size: 30px;
-    }
-
-    .offer-card p {
-        font-size: 14px;
-    }
-
-    .offer-card span {
-        font-size: 12px;
-        opacity: .8;
-    }
-
-    /* Services */
-    .service-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-    }
-
-    .service-item {
-        background: #1a1a1a;
-        padding: 16px 8px;
-        border-radius: 14px;
-        text-align: center;
-        cursor: pointer;
-        transition: .25s;
-    }
-
-    .service-item:hover {
-        transform: translateY(-4px);
-        background: #222;
-    }
-
-    .service-item i {
-        font-size: 24px;
-        margin-bottom: 6px;
-    }
-
-    .service-item p {
-        font-size: 12px;
-    }
-
-    /* Colors */
-    .purple i {
-        color: #c08aff;
-    }
-
-    .orange i {
-        color: #ff9a62;
-    }
-
-    .blue i {
-        color: #4fa7ff;
-    }
-
-    .yellow i {
-        color: #ffd454;
-    }
-
-    /* WhatsApp Button */
-    .whatsapp-circle {
-        position: fixed;
-        right: 20px;
-        bottom: 90px;
-        width: 48px;
-        height: 48px;
-        background: linear-gradient(145deg, #2be86f, #1db954);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, .45);
-        z-index: 1000;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-6px);
-        }
-    }
-
-    .whatsapp-circle i {
-        font-size: 26px;
-        color: #fff;
-    }
-
-    /* Bottom Nav */
-    .bottom-nav {
-        margin-top: auto;
-        background: #1a1a1a;
-        padding: 14px 10px;
-        border-radius: 26px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .nav-item {
-        text-align: center;
-        flex: 1;
-        cursor: pointer;
-    }
-
-    .nav-item i {
-        font-size: 18px;
-    }
-
-    .nav-item p {
-        font-size: 11px;
-    }
-
-    /* Small mobile tweak only */
-    @media (max-width: 480px) {
-        body {
-            padding: 8px;
-        }
-    }
-</style>
-
     </style>
 </head>
 
@@ -472,8 +205,9 @@
                 { percent: "30%", text: "Today's Special", note: "All services" },
                 { percent: "25%", text: "Weekend Offer", note: "Cleaning only" },
                 { percent: "20%", text: "Plumbing Deal", note: "Limited time" },
-                { percent: "30%", text: "Today's Special", note: "All services" },
+                { percent: "30%", text: "Today's Special", note: "All services" }
             ];
+
             const [username, setUsername] = React.useState("");
 
             React.useEffect(() => {
@@ -487,8 +221,7 @@
                     <div className="top-bar">
                         <div>
                             <p className="welcome">Good Morning 👋</p>
-                             <h3 className="username">{username}</h3>
-                          
+                            <h3 className="username">{username}</h3>
                         </div>
                         <div>
                             <i className="fa-regular fa-bell"></i>
@@ -497,6 +230,7 @@
                     </div>
 
                     <div className="section-title"><h3>Special Offers</h3></div>
+
                     <div className="offer-card-container">
                         <div className="offer-slider">
                             {offers.map((o, i) => (
@@ -511,16 +245,20 @@
                     </div>
 
                     <div className="section-title"><h3>Services</h3></div>
+
                     <div className="service-grid">
                         <div className="service-item purple" onClick={() => location.href = 'cleaning.html'}>
                             <i className="fa-solid fa-broom"></i><p>Cleaning</p>
                         </div>
+
                         <div className="service-item orange" onClick={() => location.href = 'reairing.html'}>
                             <i className="fa-solid fa-bolt"></i><p>Repairing</p>
                         </div>
+
                         <div className="service-item blue" onClick={() => location.href = 'painiting.html'}>
                             <i className="fa-solid fa-wrench"></i><p>Plumbing</p>
                         </div>
+
                         <div className="service-item yellow" onClick={() => location.href = 'homecare.html'}>
                             <i className="fa-solid fa-house-medical"></i><p>Home Care</p>
                         </div>
@@ -534,20 +272,14 @@
                         <div className="nav-item" onClick={() => location.href = 'home.html'}>
                             <i className="fa-solid fa-house"></i><p>Home</p>
                         </div>
+
                         <div className="nav-item" onClick={() => location.href = 'bookingpage.html'}>
                             <i className="fa-regular fa-calendar-check"></i><p>Bookings</p>
                         </div>
-                      <div
-                            className="nav-item"
-                            onClick={() => window.open(
-                                "https://wa.me/919384282397?text=Hi%20Bro",
-                                "_blank"
-                            )}
-                        >
-                            <i className="fa-regular fa-envelope"></i>
-                            <p>Inbox</p>
-                        </div>
 
+                        <div className="nav-item" onClick={() => window.open("https://wa.me/919384282397?text=Hi%20Bro", "_blank")}>
+                            <i className="fa-regular fa-envelope"></i><p>Inbox</p>
+                        </div>
                     </div>
 
                 </div>
